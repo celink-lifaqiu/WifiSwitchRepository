@@ -1,4 +1,4 @@
-package com.server.serverm3;
+package com.celink.server;
 
 public class UserAction {
 	String Message;

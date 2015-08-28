@@ -1,4 +1,4 @@
-package com.server.serverm3;
+package com.celink.server;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -22,8 +22,7 @@ import java.util.regex.Pattern;
 
 import javax.security.auth.login.LoginContext;
 
-import com.test.server.TestClient;
-import com.server.serverm2.JsonUtil;
+import com.celink.server.JsonUtil;
 
 public class Server {
 	static Map<String, Socket> socketMap = new HashMap<String, Socket>();
@@ -53,11 +52,11 @@ public class Server {
 
 		try {
 			serverSocket = new ServerSocket(PORT);
-			// 等待请求,无请求一直等待
+			// 绛夊緟璇锋眰,鏃犺姹備竴鐩寸瓑寰�
 			new ThreadSendmsg();
 			while (true) {
 				System.out.println("Waiting Client");
-				socket = serverSocket.accept();// 接受请求
+				socket = serverSocket.accept();// 鎺ュ彈璇锋眰
 				System.out.println("Client Conect!");
 				System.out.println(socket);
 				socketMap.put(String.valueOf(socket.getPort()), socket);
