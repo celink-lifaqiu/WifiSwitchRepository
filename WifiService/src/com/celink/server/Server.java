@@ -36,6 +36,8 @@ public class Server {
 	private static int client_num = 0;
 	// static Scanner scanner;
 	static PrintWriter pw;
+	
+	private String name = "";
 
 	private static Server server;
 
