@@ -23,7 +23,11 @@ import java.util.regex.Pattern;
 import javax.security.auth.login.LoginContext;
 
 import com.celink.server.JsonUtil;
-
+/**
+ * 测试
+ * @author Administrator
+ *
+ */
 public class Server {
 	static Map<String, Socket> socketMap = new HashMap<String, Socket>();
 	static List<Socket> list = new ArrayList<Socket>();
