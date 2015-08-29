@@ -33,7 +33,7 @@ public class Server {
 			server = new Server();
 		}
 		// 心跳检测
-		new ManagerClientThread(server);
+		new ManagerClientThread(server).start();
 		return server;
 	}
 	
@@ -52,7 +52,7 @@ public class Server {
 				System.out.println("Waiting Client");
 				socket = serverSocket.accept();//有客户端连接
 				System.out.println("Client Conect!");
-				new ClientThread(socket, getInstance());
+				new ClientThread(socket, getInstance()).start();
 			}
 		} catch (Exception e) {
 			try {

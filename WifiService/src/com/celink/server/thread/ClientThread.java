@@ -64,11 +64,11 @@ public class ClientThread extends Thread{
 				pw = new PrintWriter(new BufferedWriter(
 						new OutputStreamWriter(socket.getOutputStream())), true);
 			}catch (IOException e) {
-				System.out.println(ClientThread.class + "==========" + e.getMessage());
+				System.out.println(ClientThread.class + "====67======" + e.getMessage());
 				try {
 					socket.close();
 				} catch (IOException e1) {
-					System.out.println(ClientThread.class + "==========" + e1.getMessage());
+					System.out.println(ClientThread.class + "====71======" + e1.getMessage());
 				}
 			}
 			
@@ -139,7 +139,9 @@ public class ClientThread extends Thread{
 			}catch (JSONException e) {
 				sendToClientMsg(1, getConstantValue(2), null);
 			}catch (IOException e) {
-				System.out.println(ClientThread.class + "==========" + e.getMessage());
+				// 关闭连接
+				close();
+				this.getServer().getMap().remove(uuid);
 			}
 		}
 	}
@@ -157,11 +159,13 @@ public class ClientThread extends Thread{
 			try {
 				pw.println(JsonUtil.getJson(jb));
 			} catch (JsonGenerationException e) {
-				System.out.println(ClientThread.class + "==========" + e.getMessage());
+				e.printStackTrace();
 			} catch (JsonMappingException e) {
-				System.out.println(ClientThread.class + "==========" + e.getMessage());
+				e.printStackTrace();
 			} catch (IOException e) {
-				System.out.println(ClientThread.class + "==========" + e.getMessage());
+				// 关闭连接
+				close();
+				this.getServer().getMap().remove(uuid);
 			}
 		}
 	}
