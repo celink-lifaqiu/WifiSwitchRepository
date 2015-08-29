@@ -22,5 +22,7 @@
 	<classpathentry kind="lib" path="lib/jackson-databind-2.3.0.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-mapper-asl-1.5.2.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-api-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-3.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/org.springframework.security.core-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

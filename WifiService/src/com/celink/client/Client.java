@@ -1,4 +1,4 @@
-package com.celink.server;
+package com.celink.client;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,6 +10,9 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import com.celink.server.Server;
+import com.celink.util.JsonUtil;
 
 public class Client {
 
